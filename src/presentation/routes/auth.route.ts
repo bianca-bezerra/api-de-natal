@@ -6,14 +6,14 @@ import { BaseRoute } from "./base.route";
 
 export class AuthRoutes extends BaseRoute {
     constructor(app: Application) {
-        super(app, "Auth Routes");
+        super(app, "Auth Routes","/auth");
     }
 
     configureRoutes(): Application {
         const controller = container.resolve(AuthController);
 
-        this.app.post("/signup", controller.signup);
-        this.app.post("/signin", controller.signin);
+        this.app.post(`${this.suffix}/signup`, controller.signup);
+        this.app.post(`${this.suffix}/signin`, controller.signin);
 
         return this.app;
     }

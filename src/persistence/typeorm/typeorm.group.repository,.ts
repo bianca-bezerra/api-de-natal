@@ -25,7 +25,6 @@ export class TypeORMGroupRepository implements GroupRepository {
         return group
     }
 
-
     async create(entity: Group): Promise<Group> {
         return await this.repository.save(entity);
     }

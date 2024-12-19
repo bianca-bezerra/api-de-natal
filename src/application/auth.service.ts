@@ -50,9 +50,7 @@ export class AuthService {
         }
         const hashedPass = await this.hashProvider.hash(password);
 
-        console.log('')
         const newUser = new User(name, email, hashedPass)
-        console.log("meu novo usuario...",newUser)
         const userCreated = await this.userRepository.create(
             newUser
         );

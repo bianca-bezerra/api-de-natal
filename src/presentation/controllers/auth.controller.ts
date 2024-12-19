@@ -18,9 +18,9 @@ export class AuthController {
 
     public signin = async (req: Request, res: Response) => {
         const { email, password } = req.body;
-        const signData = await this.authService.signin({ email, password });
+        const data = await this.authService.signin({ email, password });
 
-        res.json(signData);
+        res.json(data);
     };
 }
 

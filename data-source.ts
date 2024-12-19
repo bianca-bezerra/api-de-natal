@@ -14,7 +14,7 @@ export const AppDataSource = new DataSource({
     synchronize: false,
     logging: true,
     entities: [Group, User, Draw],
-    migrations: ["./src/persistence/typeorm/migrations/**/*.ts"],
+    migrations: ["/src/persistence/typeorm/migrations/**/*.ts"],
 
 })
 

@@ -5,18 +5,30 @@ import { GroupService } from "../../application/group.service";
 
 @injectable()
 export class GroupController {
-    constructor(private groupService: GroupService) { }
+  constructor(private groupService: GroupService) {}
 
-    public create = async (request: Request, response: Response) => {
-        const { name, description, hostId } = request.body;
-        const group = await this.groupService.createGroup({ name, description, hostId });
-        response.status(201).json(group);
-    }
-    public addUserToGroup = async (request: Request, response: Response) => {
-        const { userId, groupId } = request.body
-        const groupUpdated = await this.groupService.AddToGroup({ userId, groupId })
-        response.status(200).json(groupUpdated);
-    }
+  public create = async (request: Request, response: Response) => {
+    const { name, description, hostId } = request.body;
+    const group = await this.groupService.createGroup({
+      name,
+      description,
+      hostId,
+    });
+    response.status(201).json(group);
+  };
+  public addUserToGroup = async (request: Request, response: Response) => {
+    const { userId, groupId } = request.body;
+    const groupUpdated = await this.groupService.AddToGroup({
+      userId,
+      groupId,
+    });
+    response.status(200).json(groupUpdated);
+  };
+
+  public list = async (request: Request, response: Response) => {
+    const groups = await this.groupService.listGroup()
+    response.status(200).json(groups);
+  };
 }
 
 export default container.resolve(GroupController);
