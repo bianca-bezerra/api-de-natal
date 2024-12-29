@@ -1,4 +1,7 @@
 # API de Natal
+DUPLA:
+- Bianca Bezerra
+- Giovanna Lima
 ---
 
 ## Entidades
@@ -46,7 +49,6 @@ Representa os sorteios de amigo oculto realizados dentro de um grupo.
 ### Rotas de Sorteio
 - **`POST /sorteio/criar/:id_grupo`** - Realizar o sorteio para um grupo existente, gerando os pares de amigo oculto.
 - **`GET /sorteio/meuamigo/:id_grupo/:id_usuario`** - Obter o seu amigo secreto de determinado grupo onde o usuário foi participante.
-
 
 ---
 
